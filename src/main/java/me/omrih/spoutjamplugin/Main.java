@@ -1,4 +1,4 @@
-package com.example;
+package me.omrih.spoutjamplugin;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;

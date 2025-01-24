@@ -1,8 +1,8 @@
-package com.example;
+package me.omrih.spoutjamplugin;
 
 import org.getspout.spoutapi.material.item.GenericCustomFood;
 
-import static com.example.Main.plugin;
+import static me.omrih.spoutjamplugin.Main.plugin;
 
 public class ExampleFood extends GenericCustomFood {
     public ExampleFood() {

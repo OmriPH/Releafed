@@ -1,4 +1,4 @@
-package com.example;
+package me.omrih.spoutjamplugin;
 
 import org.bukkit.block.BlockFace;
 import org.getspout.spoutapi.block.SpoutBlock;
@@ -6,7 +6,7 @@ import org.getspout.spoutapi.inventory.SpoutItemStack;
 import org.getspout.spoutapi.material.item.GenericCustomItem;
 import org.getspout.spoutapi.player.SpoutPlayer;
 
-import static com.example.Main.plugin;
+import static me.omrih.spoutjamplugin.Main.plugin;
 
 // GenericCustomItem is the class to extend for a custom item
 public class ExampleItem extends GenericCustomItem {

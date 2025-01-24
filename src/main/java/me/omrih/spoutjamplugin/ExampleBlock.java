@@ -1,4 +1,4 @@
-package com.example;
+package me.omrih.spoutjamplugin;
 
 import org.bukkit.World;
 import org.getspout.spoutapi.block.design.GenericCubeBlockDesign;
@@ -6,7 +6,7 @@ import org.getspout.spoutapi.inventory.SpoutItemStack;
 import org.getspout.spoutapi.material.block.GenericCustomBlock;
 import org.getspout.spoutapi.player.SpoutPlayer;
 
-import static com.example.Main.plugin;
+import static me.omrih.spoutjamplugin.Main.plugin;
 
 public class ExampleBlock extends GenericCustomBlock {
     public ExampleBlock() {
