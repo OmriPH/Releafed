@@ -50,5 +50,17 @@ public class Main extends JavaPlugin {
         SpoutManager.getMaterialManager().registerSpoutRecipe(
                 new SpoutShapelessRecipe(new SpoutItemStack(condensedJungleLeaves, 1))
                         .addIngredient(4, MaterialData.jungleLeaves));
+        SpoutManager.getMaterialManager().registerSpoutRecipe(
+                new SpoutShapelessRecipe(new SpoutItemStack(MaterialData.leaves))
+                        .addIngredient(condensedOakLeaves));
+        SpoutManager.getMaterialManager().registerSpoutRecipe(
+                new SpoutShapelessRecipe(new SpoutItemStack(MaterialData.birchLeaves))
+                        .addIngredient(condensedBirchLeaves));
+        SpoutManager.getMaterialManager().registerSpoutRecipe(
+                new SpoutShapelessRecipe(new SpoutItemStack(MaterialData.spruceLeaves))
+                        .addIngredient(condensedSpruceLeaves));
+        SpoutManager.getMaterialManager().registerSpoutRecipe(
+                new SpoutShapelessRecipe(new SpoutItemStack(MaterialData.jungleLeaves))
+                        .addIngredient(condensedJungleLeaves));
     }
 }
