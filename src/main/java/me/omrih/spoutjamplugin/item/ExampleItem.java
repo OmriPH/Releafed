@@ -1,4 +1,4 @@
-package me.omrih.spoutjamplugin;
+package me.omrih.spoutjamplugin.item;
 
 import org.bukkit.block.BlockFace;
 import org.getspout.spoutapi.block.SpoutBlock;
@@ -14,7 +14,7 @@ public class ExampleItem extends GenericCustomItem {
 
     public ExampleItem() {
         // Plugin instance, Item ID, url to PNG texture
-        super(plugin, "exampleitem", "https://i.ibb.co/sCFvQBD/q6wBozz.png");
+        super(plugin, "example_item", "https://i.ibb.co/sCFvQBD/q6wBozz.png");
         setName("Example Item"); // Set item name
         // setStackable(false); // Makes item not stackable
     }
@@ -25,7 +25,7 @@ public class ExampleItem extends GenericCustomItem {
 
         if (!player.isSpoutCraftEnabled()) return false; // Only interact if Spout player (Spout can allow vanilla clients to join)
 
-        player.getInventory().addItem(new SpoutItemStack(plugin.EXAMPLE_ITEM)); // Give player a Spout item
+        player.getInventory().addItem(new SpoutItemStack(plugin.exampleItem)); // Give player a Spout item
 
         return true;
     }

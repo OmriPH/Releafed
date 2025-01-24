@@ -1,37 +1,41 @@
 package me.omrih.spoutjamplugin;
 
-import org.bukkit.Material;
-import org.bukkit.inventory.ItemStack;
+import me.omrih.spoutjamplugin.block.CondensedLeaves;
+import me.omrih.spoutjamplugin.item.ExampleFood;
+import me.omrih.spoutjamplugin.item.ExampleItem;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.getspout.spoutapi.SpoutManager;
 import org.getspout.spoutapi.inventory.SpoutItemStack;
-import org.getspout.spoutapi.inventory.SpoutShapedRecipe;
 import org.getspout.spoutapi.inventory.SpoutShapelessRecipe;
 import org.getspout.spoutapi.material.MaterialData;
 
 public class Main extends JavaPlugin {
     public static Main plugin;
 
-    public ExampleItem EXAMPLE_ITEM;
-    public ExampleBlock EXAMPLE_BLOCK;
-    public ExampleFood EXAMPLE_FOOD;
+    public ExampleItem exampleItem;
+    public CondensedLeaves condensedLeaves;
+    public ExampleFood exampleFood;
 
     @Override
     public void onEnable() {
         plugin = this;
         // The items & blocks need to be initialised somewhere. Add as a variable to this class so it can be referenced to add to inventories
-        EXAMPLE_ITEM = new ExampleItem();
-        EXAMPLE_BLOCK = new ExampleBlock();
-        EXAMPLE_FOOD = new ExampleFood();
+        condensedLeaves = new CondensedLeaves();
+        exampleItem = new ExampleItem();
+        exampleFood = new ExampleFood();
 
-        // Basic 2x2 shaped recipe
-        SpoutManager.getMaterialManager().registerSpoutRecipe((
-                new SpoutShapedRecipe(new SpoutItemStack(EXAMPLE_BLOCK, 1)))
-                .shape("ss", "ss")
-                .setIngredient('s', MaterialData.sugarCane));
-        // Shapeless recipe
-        SpoutManager.getMaterialManager().registerSpoutRecipe((
-                new SpoutShapelessRecipe(new ItemStack(Material.SUGAR_CANE, 4)))
-                .addIngredient(1, EXAMPLE_BLOCK));
+        // Condensed Leaves recipe(s) (no way this is the best way to do this)
+        SpoutManager.getMaterialManager().registerSpoutRecipe(
+                new SpoutShapelessRecipe(new SpoutItemStack(condensedLeaves, 1))
+                        .addIngredient(4, MaterialData.leaves));
+        SpoutManager.getMaterialManager().registerSpoutRecipe(
+                new SpoutShapelessRecipe(new SpoutItemStack(condensedLeaves, 1))
+                        .addIngredient(4, MaterialData.birchLeaves));
+        SpoutManager.getMaterialManager().registerSpoutRecipe(
+                new SpoutShapelessRecipe(new SpoutItemStack(condensedLeaves, 1))
+                        .addIngredient(4, MaterialData.jungleLeaves));
+        SpoutManager.getMaterialManager().registerSpoutRecipe(
+                new SpoutShapelessRecipe(new SpoutItemStack(condensedLeaves, 1))
+                        .addIngredient(4, MaterialData.spruceLeaves));
     }
 }
