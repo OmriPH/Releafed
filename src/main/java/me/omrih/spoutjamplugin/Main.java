@@ -9,8 +9,11 @@ import org.getspout.spoutapi.inventory.SpoutItemStack;
 import org.getspout.spoutapi.inventory.SpoutShapelessRecipe;
 import org.getspout.spoutapi.material.MaterialData;
 
+import java.util.logging.Logger;
+
 public class Main extends JavaPlugin {
     public static Main plugin;
+    public static Logger logger;
 
     public ExampleItem exampleItem;
     public CondensedLeaves condensedLeaves;
@@ -19,6 +22,7 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
+        logger = this.getLogger();
         // The items & blocks need to be initialised somewhere. Add as a variable to this class so it can be referenced to add to inventories
         condensedLeaves = new CondensedLeaves();
         exampleItem = new ExampleItem();
