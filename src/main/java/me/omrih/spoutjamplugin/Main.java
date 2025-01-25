@@ -17,7 +17,7 @@ public class Main extends JavaPlugin {
     public static Main plugin;
     public static Logger logger;
     public static final String blockPath = "https://raw.githubusercontent.com/Trioplane/SpoutJam-2025/refs/heads/main/textures/block/";
-    public static final String itemPath = "https://raw.githubusercontent.com/Trioplane/SpoutJam-2025/refs/heads/main/textures/block/";
+    public static final String itemPath = "https://raw.githubusercontent.com/Trioplane/SpoutJam-2025/refs/heads/main/textures/item/";
 
     public CondensedOakLeaves condensedOakLeaves;
     public CondensedBirchLeaves condensedBirchLeaves;
