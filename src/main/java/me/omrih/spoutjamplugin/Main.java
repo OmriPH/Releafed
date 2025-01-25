@@ -27,7 +27,6 @@ public class Main extends JavaPlugin {
     public EdibleBirchLeaves edibleBirchLeaves;
     public EdibleSpruceLeaves edibleSpruceLeaves;
     public EdibleJungleLeaves edibleJungleLeaves;
-    public ExampleItem exampleItem;
 
     @Override
     public void onEnable() {
@@ -42,7 +41,6 @@ public class Main extends JavaPlugin {
         edibleBirchLeaves = new EdibleBirchLeaves();
         edibleSpruceLeaves = new EdibleSpruceLeaves();
         edibleJungleLeaves = new EdibleJungleLeaves();
-        exampleItem = new ExampleItem();
 
         // Condensed Leaves recipe(s)
         SpoutManager.getMaterialManager().registerSpoutRecipe(
