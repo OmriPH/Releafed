@@ -5,20 +5,23 @@ import me.omrih.spoutjamplugin.block.CondensedJungleLeaves;
 import me.omrih.spoutjamplugin.block.CondensedOakLeaves;
 import me.omrih.spoutjamplugin.block.CondensedSpruceLeaves;
 import me.omrih.spoutjamplugin.item.*;
+import me.omrih.spoutjamplugin.tool.CondensedLeavesPickaxe;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.getspout.spout.sound.SimpleSoundManager;
 import org.getspout.spoutapi.SpoutManager;
 import org.getspout.spoutapi.inventory.SpoutItemStack;
+import org.getspout.spoutapi.inventory.SpoutShapedRecipe;
 import org.getspout.spoutapi.inventory.SpoutShapelessRecipe;
 import org.getspout.spoutapi.material.MaterialData;
+import org.getspout.spoutapi.sound.SoundManager;
 
 import java.util.logging.Logger;
 
 public class Main extends JavaPlugin {
-    public static Main plugin;
-    public static Logger logger;
     public static final String blockPath = "https://raw.githubusercontent.com/Trioplane/SpoutJam-2025/refs/heads/main/textures/block/";
     public static final String itemPath = "https://raw.githubusercontent.com/Trioplane/SpoutJam-2025/refs/heads/main/textures/item/";
-
+    public static Main plugin;
+    public static Logger logger;
     public CondensedOakLeaves condensedOakLeaves;
     public CondensedBirchLeaves condensedBirchLeaves;
     public CondensedSpruceLeaves condensedSpruceLeaves;
@@ -27,11 +30,17 @@ public class Main extends JavaPlugin {
     public EdibleBirchLeaves edibleBirchLeaves;
     public EdibleSpruceLeaves edibleSpruceLeaves;
     public EdibleJungleLeaves edibleJungleLeaves;
+    public LeafStick leafStick;
+    public DeadLeafStick deadLeafStick;
+    public CondensedLeavesPickaxe condensedLeavesPickaxe;
+
+    SoundManager soundManager;
 
     @Override
     public void onEnable() {
         plugin = this;
         logger = this.getLogger();
+        soundManager = new SimpleSoundManager();
         // The items & blocks need to be initialised somewhere. Add as a variable to this class so it can be referenced to add to inventories
         condensedOakLeaves = new CondensedOakLeaves();
         condensedBirchLeaves = new CondensedBirchLeaves();
@@ -41,6 +50,13 @@ public class Main extends JavaPlugin {
         edibleBirchLeaves = new EdibleBirchLeaves();
         edibleSpruceLeaves = new EdibleSpruceLeaves();
         edibleJungleLeaves = new EdibleJungleLeaves();
+        leafStick = new LeafStick();
+        deadLeafStick = new DeadLeafStick();
+        condensedLeavesPickaxe = new CondensedLeavesPickaxe();
+
+        /*Bukkit.getScheduler().runTaskTimer(this, () -> {
+            soundManager.playGlobalCustomMusic(plugin, "", true);
+        }, 20, 0);*/
 
         // Condensed Leaves recipe(s)
         SpoutManager.getMaterialManager().registerSpoutRecipe(
@@ -81,5 +97,52 @@ public class Main extends JavaPlugin {
         SpoutManager.getMaterialManager().registerSpoutRecipe(
                 new SpoutShapelessRecipe(new SpoutItemStack(edibleJungleLeaves))
                         .addIngredient(2, condensedJungleLeaves));
+
+        // Tools
+        SpoutManager.getMaterialManager().registerSpoutRecipe(
+                new SpoutShapedRecipe(new SpoutItemStack(leafStick, 1))
+                        .shape(" s ", " s ", " s ")
+                        .setIngredient('s', condensedOakLeaves)
+        );
+        SpoutManager.getMaterialManager().registerSpoutRecipe(
+                new SpoutShapedRecipe(new SpoutItemStack(leafStick, 1))
+                        .shape(" s ", " s ", " s ")
+                        .setIngredient('s', condensedBirchLeaves)
+        );
+        SpoutManager.getMaterialManager().registerSpoutRecipe(
+                new SpoutShapedRecipe(new SpoutItemStack(leafStick, 1))
+                        .shape(" s ", " s ", " s ")
+                        .setIngredient('s', condensedSpruceLeaves)
+        );
+        SpoutManager.getMaterialManager().registerSpoutRecipe(
+                new SpoutShapedRecipe(new SpoutItemStack(leafStick, 1))
+                        .shape(" s ", " s ", " s ")
+                        .setIngredient('s', condensedJungleLeaves)
+        );
+        // Tools
+        SpoutManager.getMaterialManager().registerSpoutRecipe(
+                new SpoutShapedRecipe(new SpoutItemStack(condensedLeavesPickaxe))
+                        .shape("xxx", " s ", " s ")
+                        .setIngredient('s', leafStick)
+                        .setIngredient('x', condensedOakLeaves)
+        );
+        SpoutManager.getMaterialManager().registerSpoutRecipe(
+                new SpoutShapedRecipe(new SpoutItemStack(condensedLeavesPickaxe))
+                        .shape("xxx", " s ", " s ")
+                        .setIngredient('s', leafStick)
+                        .setIngredient('x', condensedBirchLeaves)
+        );
+        SpoutManager.getMaterialManager().registerSpoutRecipe(
+                new SpoutShapedRecipe(new SpoutItemStack(condensedLeavesPickaxe))
+                        .shape("xxx", " s ", " s ")
+                        .setIngredient('s', leafStick)
+                        .setIngredient('x', condensedSpruceLeaves)
+        );
+        SpoutManager.getMaterialManager().registerSpoutRecipe(
+                new SpoutShapedRecipe(new SpoutItemStack(condensedLeavesPickaxe))
+                        .shape("xxx", " s ", " s ")
+                        .setIngredient('s', leafStick)
+                        .setIngredient('x', condensedJungleLeaves)
+        );
     }
 }
