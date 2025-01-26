@@ -1,5 +1,5 @@
-name: SpoutjamPlugin
-main: me.omrih.spoutjamplugin.Main
+name: Releafed
+main: me.omrih.releafed.Main
 version: 1.0.0
 
 # Depend on Spout

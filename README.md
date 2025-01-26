@@ -4,6 +4,7 @@ Releafed is a ReSpouted 1.6.4 plugin that... adds things to do with leaves.
 - Sticks (trust me these are new)
 - Condensed Leaves Pickaxe
 - Edible Leaves
+- Music!
 
 ## Team
 - [omrih](https://github.com/OmriPH) - Project Lead
