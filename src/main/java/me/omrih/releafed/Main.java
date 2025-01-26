@@ -59,7 +59,7 @@ public class Main extends JavaPlugin {
         Bukkit.getScheduler().runTaskTimer(this, () -> {
             if (new Random().nextInt(2) == 0) return;
             soundManager.playGlobalCustomMusic(plugin, "https://raw.githubusercontent.com/Trioplane/SpoutJam-2025/refs/heads/main/music/cobweb.ogg", true);
-        }, 7200, 0);
+        }, 0, 7200);
 
         // Condensed Leaves recipe(s)
         SpoutManager.getMaterialManager().registerSpoutRecipe(
