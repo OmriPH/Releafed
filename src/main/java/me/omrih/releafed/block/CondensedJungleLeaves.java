@@ -1,10 +1,10 @@
-package me.omrih.spoutjamplugin.block;
+package me.omrih.releafed.block;
 
 import org.getspout.spoutapi.block.design.GenericCubeBlockDesign;
 import org.getspout.spoutapi.material.block.GenericCustomBlock;
 
-import static me.omrih.spoutjamplugin.Main.blockPath;
-import static me.omrih.spoutjamplugin.Main.plugin;
+import static me.omrih.releafed.Main.blockPath;
+import static me.omrih.releafed.Main.plugin;
 
 public class CondensedJungleLeaves extends GenericCustomBlock {
     public CondensedJungleLeaves() {

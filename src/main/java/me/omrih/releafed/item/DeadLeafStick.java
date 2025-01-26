@@ -1,9 +1,9 @@
-package me.omrih.spoutjamplugin.item;
+package me.omrih.releafed.item;
 
 import org.getspout.spoutapi.material.item.GenericCustomItem;
 
-import static me.omrih.spoutjamplugin.Main.itemPath;
-import static me.omrih.spoutjamplugin.Main.plugin;
+import static me.omrih.releafed.Main.itemPath;
+import static me.omrih.releafed.Main.plugin;
 
 public class DeadLeafStick extends GenericCustomItem {
     public DeadLeafStick() {

@@ -1,11 +1,12 @@
-package me.omrih.spoutjamplugin;
+package me.omrih.releafed;
 
-import me.omrih.spoutjamplugin.block.CondensedBirchLeaves;
-import me.omrih.spoutjamplugin.block.CondensedJungleLeaves;
-import me.omrih.spoutjamplugin.block.CondensedOakLeaves;
-import me.omrih.spoutjamplugin.block.CondensedSpruceLeaves;
-import me.omrih.spoutjamplugin.item.*;
-import me.omrih.spoutjamplugin.tool.CondensedLeavesPickaxe;
+import me.omrih.releafed.block.CondensedBirchLeaves;
+import me.omrih.releafed.block.CondensedJungleLeaves;
+import me.omrih.releafed.block.CondensedOakLeaves;
+import me.omrih.releafed.block.CondensedSpruceLeaves;
+import me.omrih.releafed.item.*;
+import me.omrih.releafed.tool.CondensedLeavesPickaxe;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.getspout.spout.sound.SimpleSoundManager;
 import org.getspout.spoutapi.SpoutManager;
@@ -15,6 +16,7 @@ import org.getspout.spoutapi.inventory.SpoutShapelessRecipe;
 import org.getspout.spoutapi.material.MaterialData;
 import org.getspout.spoutapi.sound.SoundManager;
 
+import java.util.Random;
 import java.util.logging.Logger;
 
 public class Main extends JavaPlugin {
@@ -54,9 +56,10 @@ public class Main extends JavaPlugin {
         deadLeafStick = new DeadLeafStick();
         condensedLeavesPickaxe = new CondensedLeavesPickaxe();
 
-        /*Bukkit.getScheduler().runTaskTimer(this, () -> {
-            soundManager.playGlobalCustomMusic(plugin, "", true);
-        }, 20, 0);*/
+        Bukkit.getScheduler().runTaskTimer(this, () -> {
+            if (new Random().nextInt(2) == 0) return;
+            soundManager.playGlobalCustomMusic(plugin, "https://raw.githubusercontent.com/Trioplane/SpoutJam-2025/refs/heads/main/music/cobweb.ogg", true);
+        }, 7200, 0);
 
         // Condensed Leaves recipe(s)
         SpoutManager.getMaterialManager().registerSpoutRecipe(

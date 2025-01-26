@@ -1,9 +1,9 @@
-package me.omrih.spoutjamplugin.tool;
+package me.omrih.releafed.tool;
 
 import org.getspout.spoutapi.material.item.GenericCustomTool;
 
-import static me.omrih.spoutjamplugin.Main.itemPath;
-import static me.omrih.spoutjamplugin.Main.plugin;
+import static me.omrih.releafed.Main.itemPath;
+import static me.omrih.releafed.Main.plugin;
 
 public class CondensedLeavesPickaxe extends GenericCustomTool {
     public CondensedLeavesPickaxe() {

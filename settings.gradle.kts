@@ -1,1 +1,1 @@
-rootProject.name = "SpoutjamPlugin"
+rootProject.name = "Releafed"
